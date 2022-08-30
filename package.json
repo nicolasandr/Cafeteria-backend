@@ -1,15 +1,18 @@
 {
-  "name": "cafeteria-backend",
-  "version": "1.0.0",
-  "description": "Practica del proyecto de backend para la cafeteria",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Andrade nicolas",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+    "name": "cafeteria-backend",
+    "version": "1.0.0",
+    "description": "Practica del proyecto de backend para la cafeteria",
+    "main": "index.js",
+    "scripts": {
+        "start": "babel-node index.js",
+        "dev": "nodemon --exec babel-node index.js"
+    },
+    "keywords": [],
+    "author": "Andrade nicolas",
+    "license": "ISC",
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "express": "^4.18.1"
+    }
 }
