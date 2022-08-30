@@ -11,4 +11,10 @@ app.set('port',process.env.PORT || 4000);
 app.listen(app.get('port'), ()=>{
         console.log('estamos en el puerto '+app.get('port') )
 })
-console.log('hola mundo')
+//middlewares
+
+//rutas
+app.get('/',(req,res)=>{
+        res.send('primera peticion get')
+
+})
