@@ -18,3 +18,6 @@ app.get('/',(req,res)=>{
         res.send('primera peticion get')
 
 })
+app.get('/pruebas', (req, res) => {
+    res.send('otra peticion get');
+});
