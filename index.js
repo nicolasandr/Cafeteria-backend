@@ -1,4 +1,7 @@
 import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import path from 'path'; 
 //const express = require('express');
 
 //instancia de express
@@ -12,12 +15,19 @@ app.listen(app.get('port'), ()=>{
         console.log('estamos en el puerto '+app.get('port') )
 })
 //middlewares
+app.use(morgan('dev')) // da informacion en la terminal
+app.use(cors()); //permite recibir peticiones remotas.
+//los 2 middlewares que sirven para procesar un objeto JSON.
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+//cargar un archivo estatico
+app.use(express.static('./public'));
 
 //rutas
 app.get('/',(req,res)=>{
         res.send('primera peticion get')
 
 })
-app.get('/pruebas', (req, res) => {
+app.get('/prueba', (req, res) => {
     res.send('otra peticion get');
 });
