@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import './src/database'
+import router from './src/routes/productos.routes';
 //const express = require('express');
 
 //instancia de express
@@ -24,10 +25,4 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 
 //rutas
-app.get('/',(req,res)=>{
-        res.send('primera peticion get')
-
-})
-app.get('/prueba', (req, res) => {
-    res.send('otra peticion get');
-});
+app.use('/apicafe',router)
