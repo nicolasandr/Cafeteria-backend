@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { borrarProducto, crearProducto, listarProductos, modificarProducto, obtenerProducto } from "../controllers/productos.controller";
+import { borrarProducto, crearProducto, listarProductos, editarProducto, obtenerProducto } from "../controllers/productos.controller";
 const router  = Router();
 
 //creamos todas las rutas de los productos
@@ -9,7 +9,7 @@ router
 .get(listarProductos)
 .post(crearProducto)
 
-router.route('/productos/:id').get(obtenerProducto).put(modificarProducto).delete(borrarProducto);
+router.route('/productos/:id').get(obtenerProducto).put(editarProducto).delete(borrarProducto);
 
 export default router;
 // app.get('/',(req,res)=>{
