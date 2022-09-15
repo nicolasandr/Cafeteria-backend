@@ -10,7 +10,7 @@ const productoSchema = new Schema({
         },
         imagen:{
                 type: String,
-                required:true,
+                required:true
         },
         precio:{
                 type: Number,
