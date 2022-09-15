@@ -60,11 +60,22 @@ export const obtenerProducto = async(req, res) => {
         })
     }
 };
-export const editarProducto = (req, res) => {
+export const editarProducto =  (req, res) => {
     res.send('aqui tengo que modificar un  producto');
 };
-export const borrarProducto = (req, res) => {
-    res.send('aqui tengo que borrar un producto');
+export const borrarProducto = async (req, res) => {
+    try {
+        //buscar el producto por el id en la collection de productos de la BD y luego borrar
+    await Producto.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+        mensaje:'el producto fue eliminado correctamente'
+    })
+    } catch (error) {
+        console.log(error);
+        res.status(400).json({
+            mensaje:'error al intentar buscar el producto'
+        })
+    }
 };
 
 
