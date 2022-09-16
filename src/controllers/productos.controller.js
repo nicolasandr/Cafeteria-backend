@@ -5,17 +5,7 @@ export const crearProducto = async (req, res) => {
     try {
          console.log(req.body);
          //validacion
-         const errors = validationResult(req)
-         //preguntar si tengo errores
-         if(!errors.isEmpty()){
-             return res.status(400).json(
-                 {
-                    //  errors: errors.mapped()// este devuelve el error que ocurre
-                     errors: errors.array()// este devuelve la lista de errores
-                 }
-             )
-
-         }
+       
          //crear un objeto para guardar en la BD
          const productoNuevo = new Producto({
              nombreProducto:req.body.nombreProducto,
